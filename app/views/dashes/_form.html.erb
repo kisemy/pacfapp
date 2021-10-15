@@ -1,0 +1,27 @@
+<%= form_with(model: dash, local: true) do |form| %>
+  <% if dash.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dash.errors.count, "error") %> prohibited this dash from being saved:</h2>
+
+      <ul>
+        <% dash.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :no %>
+    <%= form.text_area :no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc %>
+    <%= form.text_area :desc %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
